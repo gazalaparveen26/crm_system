@@ -1,87 +1,17 @@
-.action-btn{
-    border-radius:12px;
-    padding:6px 12px;
-    transition:.3s;
-}
+.sidebar a.active{
 
-.action-btn:hover{
-    transform:translateY(-2px);
-}
-.navbar{
-    border-radius:0 0 20px 20px;
-}
+background:#2c3d61;
 
-.navbar .form-control{
-    width:300px;
-}
+color:#fff;
 
-.navbar .btn-light{
-    border:none;
-    width:42px;
-    height:42px;
-}
+border-left:4px solid #fff;
 
-.navbar .btn-light:hover{
-    transform:translateY(-2px);
-    transition:.3s;
-}/* Sidebar */
-
-#sidebar{
-
-width:250px;
-
-min-height:100vh;
-
-transition:.3s;
+font-weight:600;
 
 }
 
-/* Desktop */
+.sidebar a.active i{
 
-#content-wrapper{
-
-margin-left:250px;
-
-transition:.3s;
-
-}
-
-/* Mobile */
-
-@media(max-width:768px){
-
-#sidebar{
-
-position:fixed;
-
-top:0;
-
-left:-250px;
-
-width:250px;
-
-height:100%;
-
-background:#212529;
-
-z-index:1050;
-
-overflow-y:auto;
-
-}
-
-#sidebar.show{
-
-left:0;
-
-}
-
-#content-wrapper{
-
-margin-left:0;
-
-width:100%;
-
-}
+color:#fff;
 
 }

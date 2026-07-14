@@ -13,8 +13,6 @@ include 'includes/header.php';
         <div class="content-area">
         <?php include 'includes/navbar.php'; ?>
         <div id="content-area">
-
-
             <?php
 
             $allowed_pages = [

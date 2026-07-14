@@ -230,11 +230,13 @@ WHERE status='completed'"
 
 <div class="container-fluid mt-4">
     <div class="row g-4">
-        <div class="col-lg-3 col-md-6">
-            <div class="card dashboard-card">
+             <div class="col-lg-3 col-md-6">
+            <div class="card shadow border-0">
+                <div class="card-body">
                 <h6>Total Customers</h6>
                 <h2> <?= $total_customers; ?> </h2>
             </div>
+        </div>
         </div>
         <div class="col-lg-3 col-md-6">
             <div class="card shadow border-0">
@@ -304,7 +306,7 @@ WHERE status='completed'"
 
 <div class="container-fluid mt-4">
 
-    <div class="row">
+    <div class="row g-4"  >
 
         <div class="col-lg-6">
 
@@ -353,7 +355,9 @@ WHERE status='completed'"
     </div>
 
 </div>
-<div class="row mt-3">
+
+<div class="container-fluid mt-4">
+<div class="row g-4 mt-3">
     <div class="col-md-3">
         <div class="card shadow border-0">
             <div class="card-body">
@@ -402,6 +406,7 @@ WHERE status='completed'"
 
     </div>
 
+</div>
 </div>
 <div class="container-fluid mt-4">
 
@@ -540,7 +545,7 @@ WHERE status='completed'"
 $recent_sql = "SELECT customer_name,company_name,email, status FROM customers ORDER BY id DESC LIMIT 5 ";
 $recent_result = mysqli_query($conn, $recent_sql);
 ?>
-
+<div class="container-fluid mt-4">
 <div class="card shadow-sm mt-4">
      <div class="card-header d-flex justify-content-between align-items-center">
          <h5 class="mb-0"> <i class="bi bi-clock-history"></i> Recent Customers </h5>
@@ -587,11 +592,13 @@ $recent_result = mysqli_query($conn, $recent_sql);
                     </div>
                 </div>
             </div>
+        </div>
 <!-- recent leads -->
 <?php
 $recent_leads_sql = "SELECT lead_name, company_name,source,status FROM leads ORDER BY id DESC LIMIT 5";
 $recent_leads_result = mysqli_query($conn, $recent_leads_sql);
 ?>
+<div class="container-fluid mt-4">
 <div class="card shadow-sm mt-4">
      <div class="card-header d-flex justify-content-between align-items-center">
          <h5 class="mb-0"> <i class="bi bi-clock-history"></i> Recent Leads </h5>
@@ -695,7 +702,7 @@ $recent_leads_result = mysqli_query($conn, $recent_leads_sql);
                 </div>
 
             </div>
-
+</div>
 <?php
 
 $recent_payments_sql = "
@@ -716,6 +723,7 @@ $recent_payments_result =
     );
 
 ?>
+<div class="container-fluid mt-4">
 <div class="card shadow-sm mt-4">
      <div class="card-header d-flex justify-content-between align-items-center">
          <h5 class="mb-0"> <i class="bi bi-clock-history"></i> Recent Payments </h5>
@@ -833,53 +841,7 @@ $recent_payments_result =
 
             </div>
 
-    <?php
-
-    $today_followups =
-
-        mysqli_fetch_assoc(
-
-            mysqli_query(
-
-                $conn,
-
-                "SELECT COUNT(*) total
-
-FROM lead_followups
-
-WHERE followup_date = CURDATE()
-
-AND status='pending'"
-
-            )
-
-        )['total'];
-
-    ?>
-    <div class="col-lg-3 col-md-6 mt-4">
-
-        <div class="card shadow border-0">
-
-            <div class="card-body">
-
-                <h6 class="text-warning">
-
-                    Today's Followups
-
-                </h6>
-
-                <h2>
-
-                    <?= $today_followups; ?>
-
-                </h2>
-
-            </div>
-
-        </div>
-
-    </div>
-</div>
+ </div>
 <?php
 
 $activity_sql = "
@@ -896,6 +858,7 @@ LIMIT 5
 $activity_result = mysqli_query($conn,$activity_sql);
 
 ?>
+<div class="container-fluid mt-4">
 <div class="card shadow-sm mt-4">
 
     <div class="card-header d-flex justify-content-between align-items-center">
@@ -1035,7 +998,7 @@ $activity_result = mysqli_query($conn,$activity_sql);
 
 </div>
 
-
+</div>
 <script>
     setTimeout(function () {
         const canvas = document.getElementById('leadStatusChart');

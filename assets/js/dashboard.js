@@ -1,7 +1,4 @@
-document .getElementById("menu-btn").addEventListener("click",function(){
-document.getElementById("sidebar").classList.toggle("show");
-}
-);
+
 window.addEventListener('DOMContentLoaded', function () {
 const params =new URLSearchParams(window.location.search);
 const page =params.get('page');
@@ -35,11 +32,13 @@ loadPage(event.state.page);
         );
 
     })
+    
     .catch(error => {
 
         console.error(error);
 
     });
+    setActiveMenu(page);
 
 }
 function executeScripts()
@@ -90,49 +89,40 @@ setTimeout(() => {
         initUsers();
     }
 }, 100);
-const menuBtn =
-document.getElementById('menu-btn');
 
-const sidebar =
-document.getElementById('sidebar');
 
-if(menuBtn)
-{
+const menuBtn=document.getElementById("menu-btn");
 
-menuBtn.addEventListener('click',function(){
+const sidebar=document.getElementById("sidebar");
 
-sidebar.classList.toggle('show');
+if(menuBtn && sidebar){
 
-});
+menuBtn.onclick=function(){
 
-}document.addEventListener('click',function(e){
+sidebar.classList.toggle("show");
 
-if(window.innerWidth>768)
-return;
+};
 
-if(
+document.addEventListener("click",function(e){
 
-!sidebar.contains(e.target)
+if(window.innerWidth>768)return;
 
-&&
+if(!sidebar.contains(e.target) && !menuBtn.contains(e.target)){
 
-!menuBtn.contains(e.target)
-
-)
-
-{
-
-sidebar.classList.remove('show');
-
-}
-
-});window.addEventListener('resize',function(){
-
-if(window.innerWidth>768)
-{
-
-sidebar.classList.remove('show');
+sidebar.classList.remove("show");
 
 }
 
 });
+
+window.addEventListener("resize",function(){
+
+if(window.innerWidth>768){
+
+sidebar.classList.remove("show");
+
+}
+
+});
+
+}

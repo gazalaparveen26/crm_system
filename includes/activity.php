@@ -33,3 +33,4 @@ function logActivity($user_id, $module, $action, $reference_id = null, $descript
 
     mysqli_query($conn,$sql);
 }
+?>

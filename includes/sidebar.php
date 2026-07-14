@@ -1,19 +1,12 @@
 <div class="sidebar" id="sidebar">
-
     <div class="logo">
-
         <h4>CRM PRO</h4>
-
     </div>
 
-    <ul>
+    <ul class="nav flex-column">
 
         <li>
-         <a href="#"
-   onclick="loadPage('modules/dashboard/home.php')">
-                <i class="bi bi-grid"></i>
-                Dashboard
-            </a>
+            <a href="#" onclick="loadPage('modules/dashboard/home.php')"><i class="bi bi-grid"></i>       Dashboard</a>
         </li>
 
         <li>
@@ -66,22 +59,10 @@ Reports
        <i class="bi bi-calendar-check"></i> Followups </a>
 </li>
 
- <li class="nav-item">
-
-<a href="#" 
-onclick="loadPage('modules/activity/index.php')">
-
-<i class="bi bi-clock-history"></i>
-
-Activity Logs
-
-</a></li>
-        <li>
-            <a href="#">
-                <i class="bi bi-gear"></i>
-                Settings
-            </a>
-        </li>
+ <li class="nav-item"><a href="#" onclick="loadPage('modules/activity/index.php')"><i class="bi bi-clock-history"></i>Activity Logs</a></li>
+    
+        <li class="nav-item"><a href="#" onclick="loadPage('modules/notifications/index.php')"><i class="bi bi-bell"></i> Notifications </a> </li>
+        <li class="nav-item"><a href="#" onclick="loadPage('modules/settings/index.php')"> <i class="bi bi-gear"></i>Settings</a></li>
 
     </ul>
 

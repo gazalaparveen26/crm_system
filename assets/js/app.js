@@ -9,3 +9,23 @@ function filterInvoiceReport(){
     let status =document.querySelector('[name="status"]').value;
     loadPage('modules/reports/invoice.php?status='+ encodeURIComponent(status));
 }
+function setActiveMenu(page){
+
+document
+.querySelectorAll('#sidebar a')
+.forEach(link=>{
+
+link.classList.remove('active');
+
+let onclick=link.getAttribute('onclick');
+
+if(onclick && onclick.includes(page))
+{
+
+link.classList.add('active');
+
+}
+
+});
+
+}

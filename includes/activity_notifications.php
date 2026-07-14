@@ -33,3 +33,4 @@ $message
 
     mysqli_stmt_execute($stmt);
 }
+?>
